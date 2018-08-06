@@ -1,15 +1,15 @@
 year = '2018'
-month = '06'
-day_range = (1, 2)
-hour_range = (0, 2)
-minute = '00'
+month = '07'
+day_range = (1, 31)
+hour_range = (0, 24)
+minute_list = ('00', '30')
 
 base_url = 'http://weather.szmb.gov.cn/szdcc/api/selectData.do?dataType=json&area=all&datetime={}-{}-{}-{}-{}&qType=feature'
 
 short_months = {
     '1': 'Jan', '2': 'Feb', '3': 'Mar', '4': 'Apr', '5': 'May', '6': 'Jun',
     '7': 'Jul', '8': 'Aug', '9': 'Sept', '10': 'Oct', '11': 'Nov', '12': 'Dec',
-    }
+}
 
 
 features = {

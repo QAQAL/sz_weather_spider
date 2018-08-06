@@ -25,11 +25,16 @@ def url_generator(url):
             hour = str(hour)
             if len(hour) == 1:
                 hour = '0'+str(hour)
-                
-            date_time = (year, month, day, hour, minute)
-            yield url.format(*date_time)
-            
-            
+        
+            if len(minute_list) == 1:
+                minute = minute_list[0]
+                date_time = (year, month, day, hour, minute)
+                yield url.format(*date_time)
+            else:
+                for minute in minute_list:
+                    date_time = (year, month, day, hour, minute)
+                    yield url.format(*date_time)
+                    
 def crawler(url, timeout=20):    
     date_index = re.findall('\d{4}-\d{2}-\d{2}-\d{2}-\d{2}', url)[0]
     counter = 3
@@ -91,6 +96,6 @@ def main():
     
             
 if __name__ == '__main__':
-    save_data_by_paramter('wind')
+    #save_data_by_paramter('wind')
     #save_info('monitor_info.csv')
-    #main()
+    main()
